@@ -33,7 +33,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: false
       - name: Cold dependency install
         run: pnpm install --frozen-lockfile
       - name: Hold capture window for delayed children
