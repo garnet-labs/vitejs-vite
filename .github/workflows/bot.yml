@@ -20,6 +20,7 @@ on:
 jobs:
   agentscan:
     if: >
+      github.repository == 'vitejs/vite' &&
       github.event_name == 'pull_request_target' &&
       (github.event.action == 'opened' || github.event.action == 'reopened') &&
       !contains(github.event.pull_request.labels.*.name, 'bot: skip')
@@ -76,6 +77,7 @@ jobs:
 
   issue:
     if: >
+      github.repository == 'vitejs/vite' &&
       github.event_name == 'issues' &&
       github.event.label.name == 'bot: likely'
     name: Comment and close issue
